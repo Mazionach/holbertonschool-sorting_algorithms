@@ -21,7 +21,7 @@ void selection_sort(int *array, size_t size)
 				tmp = array[sort];
 				array[sort] = array[i];
 				array[i] = tmp;
-				sorted = 1
+				sorted = 1;
 			}
 		}
 		if (sorted == 1)
