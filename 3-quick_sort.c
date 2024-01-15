@@ -25,9 +25,9 @@ void quick_sort(int *array, size_t size)
 int lomuto_partition(int *arr, int lo, int hi, size_t size)
 {
 	int pivot = arr[hi];
-	int i = lo - 1;
+	int i = lo - 1, j;
 
-	for (int j = lo; j <= hi; j++)
+	for (j = lo; j <= hi; j++)
 	{
 		if (arr[j] <= pivot)
 		{
@@ -53,7 +53,9 @@ void recursive_quick_sort(int *arr, int low, int high, size_t size)
 {
 	if (low < high)
 	{
-		int pivot_index = lomuto_partition(arr, low, high, size);
+		int pivot_index;
+
+		pivot_index = lomuto_partition(arr, low, high, size);
 
 		recursive_quick_sort(arr, low, pivot_index - 1, size);
 		recursive_quick_sort(arr, pivot_index + 1, high, size);
